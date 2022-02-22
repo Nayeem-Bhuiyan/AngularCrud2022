@@ -13,7 +13,7 @@ namespace EmployeeTest.Service.EmployeeDataService.Interface
         Task<Employee> GetEmployee(int? id);
         Task<int> SaveEmployee(Employee model);
         Task<bool> DeleteEmployee(Employee entityObj);
-
+        Task<int> EditEmployee(int id, Employee model);
         IEnumerable<Employee> GetAllEmployeeData();
     }
 }

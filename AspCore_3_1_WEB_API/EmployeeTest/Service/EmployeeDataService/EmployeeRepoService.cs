@@ -43,6 +43,19 @@ namespace EmployeeTest.Service.EmployeeDataService
             }
         }
 
+
+        public async Task<int> EditEmployee(int id,Employee model)
+        {
+            if (model.Id>0)
+            {
+                return await UpdateAsync(model, model.Id);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public async Task<bool> DeleteEmployee(Employee entityObj)
         {
             return await DeleteAsync(entityObj);

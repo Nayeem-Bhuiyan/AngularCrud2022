@@ -64,14 +64,29 @@ namespace EmployeeTest.Controllers
             //return NoContent();
         }
 
+
         // POST: api/Employee
-        //[HttpPost]
-        //public async Task<IActionResult> SaveEmployee([FromForm]Employee Employee)
-        //{
+        [HttpPut]
+        public async Task<IActionResult> Edit(int id, Employee model)
+        {
 
-        //    return Ok(await _employeeRepo.SaveEmployee(Employee));
 
-        //}
+            try
+            {
+                model.Id = id;
+                return Ok(await _employeeRepo.EditEmployee(id,model));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+                throw;
+
+            }
+
+            //return NoContent();
+        }
+
+
 
         // DELETE: api/Employee/5
         [HttpDelete("{id}")]
