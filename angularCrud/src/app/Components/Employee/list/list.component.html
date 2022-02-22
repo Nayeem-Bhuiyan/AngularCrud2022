@@ -1,29 +1,38 @@
 
 <div class="container mt-3">
-    <h1>Employee List Information</h1>
-    <a href="#" routerLink="/EmpInsert" class="btn btn-success">Create New</a>
-    <table class="table table-bordered table-striped">
-
-        <thead class="table-dark">
-            <tr>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
-                <th width="220px">Action</th>
-              </tr>
-          </thead>
-      <tbody>
-        <tr *ngFor="let data of EmployeeAllData">
-            <td>{{ data.firstName }}</td>
-            <td>{{ data.middleName }}</td>
-            <td>{{ data.lastName }}</td>
-            <td>
-          <a href="#" [routerLink]="['/EmpDetails/', data.id]" class="btn btn-info" title="Details"><i class="fa fa-eye" aria-hidden="true"></i></a>
-          <a href="#" [routerLink]="['/EmpEdit/', data.id]" class="btn btn-primary" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-          <a  (click)=" deleteEmployee(data.id)" class="btn btn-danger"  title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
-            </td>
-          </tr>
-      </tbody>
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h3>Employee List Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-start mb-3">
+        <a href="#" routerLink="/EmpInsert" class="btn btn-primary">Create New</a>
+      </div>
       
-    </table>
+      <table class="table table-bordered table-striped">
+  
+          <thead class="table-dark">
+              <tr>
+                  <th>First Name</th>
+                  <th>Middle Name</th>
+                  <th>Last Name</th>
+                  <th width="220px">Action</th>
+                </tr>
+            </thead>
+        <tbody>
+          <tr *ngFor="let data of EmployeeAllData">
+              <td>{{ data.firstName }}</td>
+              <td>{{ data.middleName }}</td>
+              <td>{{ data.lastName }}</td>
+              <td>
+            <a href="#" [routerLink]="['/EmpDetails/', data.id]" class="btn btn-info" title="Details"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            <a href="#" [routerLink]="['/EmpEdit/', data.id]" class="btn btn-primary" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a  (click)=" deleteEmployee(data.id)" class="btn btn-danger"  title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              </td>
+            </tr>
+        </tbody>
+        
+      </table>
+    </div>
+  </div>
  </div>

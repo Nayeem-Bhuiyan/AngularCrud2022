@@ -1,1 +1,78 @@
-<p>insert works!</p>
+<div class="container mt-3">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h4 class="card-title">Add New Employee</h4>
+      </div>
+      <div class="card-body">
+        
+        
+        <div class="d-flex justify-content-end">
+            <a href="#" routerLink="/EmpList" class="btn btn-primary">Back</a>
+          </div>
+    <form [formGroup]="frmData" (ngSubmit)="submitFormData()" novalidate>
+            
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input
+                formControlName="firstName"
+                id="firstName"
+                name="firstName"
+                type="text"
+                class="form-control" 
+                required
+                >
+
+                <div
+                *ngIf="!f.firstname?.valid && (f.firstname?.dirty ||f.firstname?.touched)">
+                <div [hidden]="!f.firstname.errors.required">
+                  First Name is required
+                </div>
+                </div>
+        </div>
+          
+        <div class="form-group">
+            <label for="middleName">Middle Name:</label>
+            <input
+                formControlName="middleName"
+                id="middleName"
+                name="middleName"
+                type="text"
+                class="form-control" 
+                required
+                >
+
+                <div
+                *ngIf="!f.middleName?.valid && (f.middleName?.dirty ||f.middleName?.touched)">
+                <div [hidden]="!f.middleName.errors.required">
+                  First Name is required
+                </div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input
+                formControlName="lastName"
+                id="lastName"
+                name="lastName"
+                type="text"
+                class="form-control" 
+                required
+                >
+
+                <div
+                *ngIf="!f.lastName?.valid && (f.lastName?.dirty ||f.lastName?.touched)">
+                <div [hidden]="!f.lastName.errors.required">
+                  First Name is required
+                </div>
+                </div>
+        </div>
+        <div class="d-flex justify-content-start mt-3">
+            <button class="btn btn-primary" type="submit" [disabled]="!frmData.valid">Save</button>
+          </div>
+        
+    </form>
+      </div>
+    </div>
+  </div>
+
+

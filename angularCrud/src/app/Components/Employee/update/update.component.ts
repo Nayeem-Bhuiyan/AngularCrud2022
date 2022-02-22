@@ -53,8 +53,7 @@ export class UpdateComponent implements OnInit {
 
       
   submitFormData(){
-    console.log(this.frmData.value);
-    this.dataService.create(this.frmData.value).subscribe(res => {
+    this.dataService.update(this.id,this.frmData.value).subscribe(res => {
          console.log('Post updated successfully!');
          this.router.navigateByUrl('EmpList');
     })

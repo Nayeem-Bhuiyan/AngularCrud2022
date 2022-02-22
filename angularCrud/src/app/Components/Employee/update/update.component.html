@@ -1,16 +1,15 @@
-<div class="container">
-    <h1>Edit Information</h1>
-   
-    <a href="#" routerLink="/EmpList" class="btn btn-primary">Back</a>
-         
-    <form [formGroup]="frmData" (ngSubmit)="submitFormData()" novalidate>
-                <input
-                formControlName="id"
-                id="id"
-                name="firstName"
-                type="hidden"
-                [(ngModel)]="EmployeeObject.id"
-                >
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h4 class="card-title">Edit Employee</h4>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-end">
+        <a href="#" routerLink="/EmpList" class="btn btn-primary">Back</a>
+      </div>
+      
+      <form [formGroup]="frmData" (ngSubmit)="submitFormData()" novalidate>
+            
         <div class="form-group">
             <label for="firstName">First Name:</label>
             <input
@@ -69,11 +68,13 @@
                 </div>
                 </div>
         </div>
-        <button class="btn btn-primary" type="submit" [disabled]="!frmData.valid">Update</button>
+        <div class="d-flex justify-content-start mt-3">
+          <button class="btn btn-primary" type="submit" [disabled]="!frmData.valid">Update</button>
+        </div>
+        
     </form>
 
-
-
-
-    
+    </div>
+  </div>
 </div>
+
