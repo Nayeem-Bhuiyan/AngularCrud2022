@@ -26,7 +26,7 @@ import { DetailsComponent } from './Components/Employee/details/details.componen
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    EmployeeModule
+    EmployeeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

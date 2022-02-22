@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/Model/employee';
 import { EmployeeService } from 'src/app/Services/EmployeeService/employee.service';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -22,9 +22,29 @@ export class ListComponent implements OnInit {
    
 
   deleteEmployee(id){
-    this.dataService.delete(id).subscribe(res => {
-         this.EmployeeAllData = this.EmployeeAllData.filter(item => item.id !== id);
-         console.log('Post deleted successfully!');
+
+    Swal.fire({
+      title: 'Are you sure',
+      text: 'You want to Delete This?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Delete it!',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.value) {
+        this.dataService.delete(id).subscribe(res => {
+          this.EmployeeAllData = this.EmployeeAllData.filter(item => item.id !== id);
+          Swal.fire(
+            'Success!',
+            'Successfully Deleted!!',
+            'success'
+          )
+
+     })
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+       
+      }
 
     })
   }
