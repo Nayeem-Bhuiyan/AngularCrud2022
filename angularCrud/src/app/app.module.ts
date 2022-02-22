@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoPageFoundComponent } from './Components/Common/no-page-found/no-page-found.component';
 import { EmployeeModule } from './Modules/employee/employee.module';
 import { DetailsComponent } from './Components/Employee/details/details.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DetailsComponent } from './Components/Employee/details/details.componen
     ReactiveFormsModule,
     FormsModule,
     EmployeeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
