@@ -9140,11 +9140,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TestProejcts\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
+      "projectUniqueName": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
       "projectName": "EmployeeTest",
-      "projectPath": "D:\\TestProejcts\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
+      "projectPath": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\TestProejcts\\AspCore_3_1_WEB_API\\EmployeeTest\\obj\\",
+      "outputPath": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
