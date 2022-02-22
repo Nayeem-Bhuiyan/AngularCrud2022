@@ -9,7 +9,7 @@ import { Employee } from 'src/app/Model/employee';
 })
 export class EmployeeService {
 
-  private baseUrl = "http://localhost:8080/api/";
+  private baseUrl = "https://localhost:44335/api/Employee";
     
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,42 +20,42 @@ export class EmployeeService {
   constructor(private httpClient: HttpClient) { }
     
   getAll(): Observable<Employee[]> {
-    return this.httpClient.get<Employee[]>(this.baseUrl + '/controllerName/')
+    return this.httpClient.get<Employee[]>(this.baseUrl)
     .pipe(
       catchError(this.errorHandler)
     )
   }
     
   create(EmployeeObj): Observable<Employee> {
-    return this.httpClient.post<Employee>(this.baseUrl + '/controllerName/', JSON.stringify(EmployeeObj), this.httpOptions)
+    return this.httpClient.post<Employee>(this.baseUrl, JSON.stringify(EmployeeObj), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }  
     
   get(id): Observable<any> {
-    return this.httpClient.get<Employee>(this.baseUrl + '/controllerName/' + id)
+    return this.httpClient.get<Employee>(this.baseUrl+"/" + id)
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
   find(id): Observable<Employee> {
-    return this.httpClient.get<Employee>(this.baseUrl + '/controllerName/' + id)
+    return this.httpClient.get<Employee>(this.baseUrl+"/" + id)
     .pipe(
       catchError(this.errorHandler)
     )
   }
     
   update(id, EmployeeObj): Observable<Employee> {
-    return this.httpClient.put<Employee>(this.baseUrl + '/controllerName/' + id, JSON.stringify(EmployeeObj), this.httpOptions)
+    return this.httpClient.put<Employee>(this.baseUrl+"/" + id, JSON.stringify(EmployeeObj), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
     
   delete(id){
-    return this.httpClient.delete<Employee>(this.baseUrl + '/controllerName/' + id, this.httpOptions)
+    return this.httpClient.delete<Employee>(this.baseUrl+"/" + id, this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

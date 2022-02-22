@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/Model/employee';
+import { EmployeeService } from 'src/app/Services/EmployeeService/employee.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  EmployeeAllData: Employee[] = [];
 
+  constructor(public dataService: EmployeeService) { }
+   
   ngOnInit(): void {
+    this.dataService.getAll().subscribe((data: Employee[])=>{
+      this.EmployeeAllData = data;
+      console.log(this.EmployeeAllData);
+    })  
   }
+   
+
+  deleteEmployee(id){
+    this.dataService.delete(id).subscribe(res => {
+         this.EmployeeAllData = this.EmployeeAllData.filter(item => item.id !== id);
+         console.log('Post deleted successfully!');
+
+    })
+  }
+
+
 
 }

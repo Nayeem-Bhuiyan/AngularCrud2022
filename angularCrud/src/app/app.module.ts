@@ -9,6 +9,7 @@ import { ListComponent } from './Components/Employee/list/list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoPageFoundComponent } from './Components/Common/no-page-found/no-page-found.component';
 import { EmployeeModule } from './Modules/employee/employee.module';
+import { DetailsComponent } from './Components/Employee/details/details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EmployeeModule } from './Modules/employee/employee.module';
     InsertComponent,
     UpdateComponent,
     ListComponent,
-    NoPageFoundComponent
+    NoPageFoundComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
