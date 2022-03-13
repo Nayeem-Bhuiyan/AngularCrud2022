@@ -9135,19 +9135,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
+      "projectUniqueName": "F:\\TestProject\\Angular\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
       "projectName": "EmployeeTest",
-      "projectPath": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\TestProejcts\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\obj\\",
+      "projectPath": "F:\\TestProject\\Angular\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\EmployeeTest.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "F:\\TestProject\\Angular\\AngularCrud2022\\AspCore_3_1_WEB_API\\EmployeeTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9226,7 +9230,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

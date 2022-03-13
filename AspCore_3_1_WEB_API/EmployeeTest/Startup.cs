@@ -27,14 +27,21 @@ namespace EmployeeTest
         }
 
         public IConfiguration Configuration { get; }
-
+       
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(option => option.AddPolicy("MyBlogPolicy", builder => {
-                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "_myAllowSpecificOrigins",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
 
-            }));
             services.AddControllers();
             services.AddHttpClient();
             services.AddMvc();
@@ -74,7 +81,7 @@ namespace EmployeeTest
             
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors("MyBlogPolicy");
+            app.UseCors("_myAllowSpecificOrigins");
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
             app.UseSwagger();
